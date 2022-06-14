@@ -39,6 +39,12 @@ app.get('/boardgames/total', (req, res) => {
     res.send(`${boardgames.length}`)
 })
 
+app.post('/boardgames', (req, res) => {
+    boardgames.push(req.body)
+    res.status(201)
+    res.contentType('application/json')
+    res.json(boardgames)
+})
 // Task 6
 app.get('/boardgames/category', (req, res) => {
     console.log(req.query)
